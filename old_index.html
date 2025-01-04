@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <!-- HTML comment notation-->
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>My First Webpage</title>
+  </head>
+
+  <body>
+    <h1>Hello World!</h1>
+    <p>Some par.</p>
+    <h2>Second Level Header</h2>
+    <h3>2 Alternative ways of configuring a grammar for HTML:</h3>
+    <h4>1. Strict Grammar:</h4>
+    <p>Strict grammar would preserve or enforce the ordering of headers</p>
+    <p>i.e. S1 -> h1 S2 h1 S3</p>
+    <p>
+      where sibling elements to (h1) can only be generated through S3, and S3's
+      set excludes h1 (while S1 it's parent included h1). Likewise for all other
+      hn's.
+    </p>
+    <h5>2. Weak Grammar:</h5>
+    <p>
+      Weak grammar would be valid HTML that can be parsed but wouldn't preserve
+      semantic content which we would <em>like</em> to preserve as end users,
+    </p>
+    <p>i.e. S1 -> h1 S2 h1 S1</p>
+    <p>
+      Which would be validly parsable HTML <strong>I THINK</strong> but which
+      could fail to preserve heading information potentially (take the following
+      set of only start html tags: h1 h3 h2 h1 h1 h5)
+    </p>
+    <p>
+      Some of those ordering issues would prolly be excluded from the Strong
+      Grammar through further determination of the Child Node S2 moreso than by
+      replacing generated S1 with restricted S3
+    </p>
+    <p>I <em>think</em> for</p>
+
+    <ul>
+      <li>Now we're making</li>
+      <li>Lists for no</li>
+      <li>Real reason</li>
+    </ul>
+    <ol>
+      <li>Now actually</li>
+      <li>List items are</li>
+      <li>Generated with the same `li` tag</li>
+      <li>Regardless of if the list is ordered (ol)</li>
+      <li>Unordered (ul)</li>
+    </ol>
+  </body>
+</html>
