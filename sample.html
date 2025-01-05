@@ -3,14 +3,40 @@
   <!-- HTML comment notation-->
 
   <head>
+    <link rel="stylesheet" href="sample.css" />
     <meta charset="UTF-8" />
     <title>My First Webpage</title>
+    <style>
+      a {
+          color: red;
+      }
+
+      < !-- Internal CSS example -->
+    </style>
   </head>
 
   <body>
-    <h1>Hello World!</h1>
-    <p>Some par.</p>
-    <h2>Second Level Header</h2>
+    <!-- Inline CSS example -->
+    <h1 style="color: orange; font-size: 50px">Hello World!</h1>
+    <div class="base-div">
+      <p class="in-a-div">
+        1st text in div. Some par. Nested inside a div. (base-div p)
+      </p>
+
+      <div class="inter-div">
+        <p class="in-a-div">
+          2nd text in div. Very nested p in 2 divs. (inherits it's bold from the
+          inter-div it's contained within) (base-div inter-div p)
+        </p>
+      </div>
+
+      <div class="inter-div">
+        3rd text in div. Text in inter-div directly. (base-div inter-div)
+      </div>
+    </div>
+    <div class="inter-div">Random text only in inter-div (Not nested)</div>
+    <div class="base-div">Text directly within a div.</div>
+    <h2 id="head2">Second Level Header</h2>
     <h3>2 Alternative ways of configuring a grammar for HTML:</h3>
     <h4>1. Strict Grammar:</h4>
     <p>Strict grammar would preserve or enforce the ordering of headers</p>
@@ -38,17 +64,17 @@
     </p>
     <p>I <em>think</em> for</p>
 
-    <ul>
-      <li>Now we're making</li>
-      <li>Lists for no</li>
-      <li>Real reason</li>
+    <ul class="list un-list">
+      <li class="bullet">Now we're making</li>
+      <li class="bullet">Lists for no</li>
+      <li class="bullet rand-class">Real reason</li>
     </ul>
-    <ol>
-      <li>Now actually</li>
-      <li>List items are</li>
-      <li>Generated with the same `li` tag</li>
-      <li>Regardless of if the list is ordered (ol)</li>
-      <li>Unordered (ul)</li>
+    <ol class="list or-list">
+      <li class="num">Now actually</li>
+      <li class="num">List items are</li>
+      <li class="num rand-class">Generated with the same `li` tag</li>
+      <li class="num">Regardless of if the list is ordered (ol)</li>
+      <li class="num">Unordered (ul)</li>
     </ol>
     <p>
       <a target="_blank" rel="noreferrer" href="./non_existent.html"

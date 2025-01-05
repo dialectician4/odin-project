@@ -1,0 +1,60 @@
+/* sample.css */
+/* How does chaining work? */
+/* Chaining is essentially taking the intersection on multiple filter criteria (filtering down html elements). Chaining as this method of filtering works only on selection/filtering. */
+/* How does extension work? */
+/* Extension essentially takes all selectors selecting the same element, and concatenates the style determinations. Concatenation operates on the actual style deterinations.
+
+.class1 {
+    predicate1: value1;
+}
+
+.class1 {
+    predicate2: value2;
+}
+
+Simplest example of an extension but everything else follows from this */
+
+/* How does descendent combinator filtering work?
+For any html element elt with predicates p1, p2, ...., pn, if it is nested under ancestors anc1, anc2, ..., ancM, if the set of predicates belonging to any ancestor P(anc(elt)) = U(P(anc(i))) for i in [1, M]. This captures the fact that descendent combinator filtering does not require the ancestor predicate to belong to any specific ancestor (I don't know if there's ways to actually enforce predicates to belong to a specific indexed ancestor such as the root ancestor, the ancestor directly preceding the elt to be selected, etc.). But you can concatenate descendent combinators such as p1 p2 p3... pn pn+1 such that the selected elt must have predicate pn+1 and it must have a predecessor satisfying pn which must have a predecessor satisfying pn-1 which....must have a predecessor satisfying p1.
+*/
+
+/* Descendent combinator on classes */
+.inter-div .in-a-div {
+  background-color: greenyellow;
+}
+
+.base-div .inter-div {
+  font-weight: 900;
+}
+
+/* Descendent combinator on tags */
+div p {
+  color: grey;
+}
+
+/* Grouped selector, many (groups) to 1 (style) */
+.num,
+.bullet {
+  text-decoration: underline;
+}
+
+/* One selector to many (not really inheritance but this class is adjacenta couple other classes in document) */
+.rand-class {
+  text-align: center;
+}
+
+/* Concatenate/extend with existing application */
+/* Chain selector example */
+.rand-class.num {
+  font-size: 10px;
+}
+
+/* Concatenate with existing application */
+/* Chain selector example */
+.rand-class.bullet {
+  font-size: 100px;
+}
+
+/* id selector */
+#head2 {
+}
